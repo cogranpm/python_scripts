@@ -44,7 +44,7 @@ def prettyprinting():
 def regulars():
 	wholebook = "".join(gkbooklist)
 	print('---------- Regular Expressions -----------------')
-	copperfield_pattern = 'DAVID COPPERFIELD'
+	copperfield_pattern = 'calvinistic'
 	for match in re.findall(copperfield_pattern, wholebook, re.IGNORECASE):
 		print(match)
 	print('----------------------------')
