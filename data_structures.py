@@ -1,3 +1,11 @@
+# from the official python tutorials
+
+#import for a deep copy
+import copy
+
+#import for a queue structure
+from collections import deque
+
 a = ['one', 'two', 'three']
 a.append('four')
 print(a)
@@ -59,13 +67,15 @@ print(sorted(wlist, key=str.lower))
 print('without key sorting')
 print(sorted(wlist))
 # more complex example with a tuple list
+# note that the "key" argument to sorted is a lambda function which takes the list item as parameter and returns a string
 zlist = [ ('hawthorn', 'full forward', 'dunstall'), ('essendon', 'full forward', 'madden'), ('carlton', 'full forward', 'kernahan')]
 print('sort tuple by first item in record, which is club name')
 print(sorted(zlist, key=lambda record: record[0]))
 
 
 
-#what's a shallow copy of a list
+#what's a shallow copy of a list, shallow copy means a new list, but it has references to items in the list
+# change an item in the list and it changes the original
 acopy = a.copy()
 acopy.pop(1)
 print(acopy)
@@ -73,4 +83,30 @@ print(a)
 # another way to copy is
 bcopy = a[:]
 bcopy.append("I'm different")
+bcopy[0] = "malcolm"
 print(bcopy)
+print("is the original first item changed to malcolm? ")
+print(a)
+# here is how to do a deep copy
+ccopy = copy.deepcopy(a)
+ccopy.append("I am deep")
+print("this is the deep copy, you can change items ")
+print(ccopy)
+print("---- this is the original ------")
+print(a)
+ccopy[0] = "fred"
+print("--------- changed first item -----------")
+print(ccopy)
+print("---------- this is the original -------")
+print(a)
+# here is the pythonic way to copy a collection, use the factory function
+print("------ using factory function to copy list x = list(y) ---------")
+dcopy = list(ccopy)
+print(dcopy)
+
+
+#using lists as stacks etc
+print("use the pop() function on list to emulate a stack, returns last item added")
+print("do not use a list to emulate a queue because 'popping' first item is slow")
+print("use collections.deque instead")
+queue = deque(["winter", "summer", "spring", "autumn"])
