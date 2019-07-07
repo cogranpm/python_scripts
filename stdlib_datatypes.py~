@@ -1,0 +1,2 @@
+#data types
+#built in: dict, list, set, frozenset, tuple, str class is used to hold unicode strings, bytes class to hold binary data
