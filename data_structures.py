@@ -168,3 +168,44 @@ del temp_list[1:]
 print (temp_list)
 del temp_list
 
+#tuples and sequences
+print("tuple is a number of values seperated by comma: t = 123, 456, 789")
+print("you can mix and match types in a tuple")
+mytuple = "fred", "barney", "wilma"
+print(mytuple[0])
+tupleintuple = "score", (5, 7, 90)
+print("embedded tuple: ", tupleintuple)
+#list inside a tuple, is it mutable
+mylisttuple = ['a', 'b', 'c'], [1,2,3]
+print(mylisttuple, "now I will delete the 'c'")
+del mylisttuple[0][2]
+print (mylisttuple)
+#unpacking a tuple
+a, b, c = 'a', 'b', 'c'
+print(a, b, c)
+#unpacking works with lists, etc too
+a, b, c = ['z', 'x', 'y']
+print(a, b, c)
+#empty tuple
+myempty = ()
+mysingle = 1,
+print(myempty, mysingle)
+
+print("sets are unordered collection with no duplicates, use factory method or {} ")
+basket = {'apple', 'orange', 'pear', 'orange'}
+print(basket)
+print("fast membership testing via in, eg 'pear' in basket", 'pear' in basket)
+myemptyset = set()
+print("use set() for empty: ", myemptyset)
+a = set('abracadabra')
+b = set('alacazam')
+print(a, b)
+print("a - b, what is in a but not b : difference:", a -b)
+print("a | b, in a or b or both: ", a | b)
+print("a & b, in both a and b: ", a & b)
+print("a ^ b, in a or b but not both: ", a ^ b)
+#set comprehensions
+mynewset = {x for x in 'abracadabra' if x not in 'abc'}
+print("set comprehension: { statement for clause if clause }:", mynewset)
+
+
