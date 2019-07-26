@@ -1,0 +1,1 @@
+print("objects have a type, identity and value, eg someid = 5, has type integer, identity = someid and value = 5")
