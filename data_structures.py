@@ -1,8 +1,11 @@
 # from the official python tutorials
-
+# data structures chapter
 #import for a deep copy
 import copy
 from math import pi
+
+print("-" * 10, "Data Structures", "-" * 10)
+
 
 #import for a queue structure
 from collections import deque
@@ -207,5 +210,67 @@ print("a ^ b, in a or b but not both: ", a ^ b)
 #set comprehensions
 mynewset = {x for x in 'abracadabra' if x not in 'abc'}
 print("set comprehension: { statement for clause if clause }:", mynewset)
+print("set comprehensions use squiggly braces, which are also used by dictionaries ")
+
+#Dictionaries
+print("Dictionaries, keys must be immutable, like numbers and strings")
+print("Tuples can be keys if elements are immutable")
+mymtdict = {}
+print("Empty dict: ", mymtdict)
+print("it is an error to extract a value using non existent key")
+print("performing list(d) where d is a dict returns a list of all keys")
+print("for a sorted list of keys use sorted(d) where d is a dict")
+print("to check if item in dict use the in keyword")
+tel = {'jack': 4098, 'sape': 4139}
+tel['guido'] = 4127
+print(tel)
+print("list of keys: ", list(tel))
+print("sorted list of keys: ", sorted(tel))
+print("using in to check key: ", 'jack' in tel)
+print("mix with not in: ", 'jack' not in tel)
+print("factory method is dict, passed sequences of key-value pairs, think list of tuples")
+print("dict([('dingo': 1111), ('rasha': 2222)])")
+somedict = dict([('dingo', 1111), ('rasha', 2222)])
+print(somedict)
+print("also can use dict comprehensions to build key and value expressions")
+compdict = {x: x**2 for x in (2, 4, 6)}
+print("dict comprehensions: {key: value for clause if clause}")
+print(compdict)
+print("when keys are simple strings, use keyword argument style: dict(dingo='dog', redbelly='snake')")
+ozdict = dict(dingo='dog', redbelly='snake', redback='spider')
+print(ozdict)
+print("Dingo is a: ", ozdict.get('dingo'))
+print("items() method gives you key and value at same time")
+for animal, species in ozdict.items():
+    print(animal, ":", species)
+
+print("enumerate library function (ie not an object method on a dict) gives the index and the value")
+print("pass it the sequence to enumerate as an argument")
+for index, species in enumerate(ozdict):
+    print("species at ", index, "is", species)
+
+print("zip allows to loop over 2 or more sequences at same time")
+questions = ['name', 'quest', 'favourite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}? It is {1}.'.format(q, a))
+
+
+print("to loop in reverse order, use reversed() providing a sequence as the argument")
+for a in reversed(sorted(questions)):
+    print(a)
+
+print("remember, to eliminate dups, can cell set() factory method passing a list")
+print(set(['apples', 'oranges', 'potatoes', 'oranges']))
+print("remember, don't mutate list during loop, create a new one instead")
+players = ['dunstall', 'platten', 'rioli', 'jezza']
+hawks = []
+for p in players:
+    if not p == 'jezza':
+        hawks.append(p)
+print(hawks)
+print("sequences may be compared using standard operators: eg < > ==")
+print("This completes the official tutorial on data structures")
+
 
 
