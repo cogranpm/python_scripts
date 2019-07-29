@@ -1,4 +1,6 @@
 # modules tutorial
+
+import sys
 import fib #use the module name to call the functions
 
 # other method of import, no module prefix required to call
@@ -32,4 +34,10 @@ print("add an if statement to have script run as importable module OR a script")
 print("if __name__ == '__main__':")
 print("this if module is imported, as opposed to run as a script, the 'main' bit won't execute")
 print("-" * 10, "module search path", "-" * 10)
-
+print("sys.path - gives you the python directory on your machine, and the place pip puts packages")
+print("on my linux this is /usr/local/lib/python3.6/dist-packages/")
+print(sys.path)
+print("the directory containing the script being run is dynamically added to the search path")
+print("caching")
+print("each module is cached under the __pycache__ directory")
+print("the compiled version, which happens at runtime, is cached")
