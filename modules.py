@@ -59,3 +59,18 @@ print(dir(builtins))
 
 print("packages are a way of structureing pythons module namespace by using dotted modules names")
 print("a package is a collection of modules")
+print("package is just a hierachy of directories each with it's own __init__.py file")
+
+# import sound.effects.echo
+# if you import this way you need to prefix with full names: sound.effects.echo.send_echo()
+# or
+from sound.effects import echo
+print(echo.send_echo())
+# you can also import the names of functions or variables directly:
+# from sound.effects.echo import send_echo
+# then the function name is available without prefix
+
+print("importing * from a package")
+print("in the __init__.py files, you can provide a list named __all__, it is taken to be the list of of modules names that should be imported when 'from package import * is encountered")
+print("if it is not provided then it will only import what is in the __init__.py")
+print("the recommended style is 'from package import specific_submodule'")
