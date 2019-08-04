@@ -18,6 +18,8 @@ from fibo3 import fib3 as fibonacci
 # module only loaded 1 per interpreter session
 import importlib
 
+import builtins
+
 fib.fib(1000)
 print(fib.__name__)
 print(fib3(300))
@@ -38,6 +40,22 @@ print("sys.path - gives you the python directory on your machine, and the place 
 print("on my linux this is /usr/local/lib/python3.6/dist-packages/")
 print(sys.path)
 print("the directory containing the script being run is dynamically added to the search path")
+print("you can add to this like this: sys.path.append('somedirectory')")
+
 print("caching")
 print("each module is cached under the __pycache__ directory")
 print("the compiled version, which happens at runtime, is cached")
+print("you can ship a 'compiled' version by removing source files and providing the compiled files")
+print("the compileall module can create .pyc files for all modules in a directory")
+
+print("-", "Standard Modules", "-")
+print("the sys module is build into every python interpreter")
+print("dir() function shows which names a module defines")
+print(dir(fib))
+print("call without arguments to show names currently defined: ", dir())
+
+print("show the built in names of functions and variables: dir(builtins)")
+print(dir(builtins))
+
+print("packages are a way of structureing pythons module namespace by using dotted modules names")
+print("a package is a collection of modules")
