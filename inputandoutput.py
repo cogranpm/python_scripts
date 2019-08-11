@@ -1,5 +1,6 @@
 """ input and output """
 import math
+import json
 
 print("fancier output formatting")
 print("formatted literal strings: f'text text {variable} {variable}'")
@@ -44,3 +45,18 @@ print('pi is %5.3f.' % math.pi)
 print('reading and writing files')
 print(' obj = open(filename, mode), r is the default')
 print("possible modes: 'r', 'w' (erases existing), 'a' (append), 'r+' (read and write)")
+print("for bytes mode, append b to the mode argument")
+print("never open binary files in text mode, or the file will be corrupted")
+print("use the with keyword, shorter than try-finally and will auto close file, even if exception")
+print("methods of file object:")
+print("read(), readLine(), readLines(), write(string), tell(), seek(offset, fromwhat)")
+print("looping syntax: for line in f:")
+print("you can use list(fileobject) to read all lines into a list")
+
+print('-' * 20)
+print('JSON')
+print('import json')
+print('json.dumps(object) or json.dump(object, file) which writes to file, x = json.load(file)')
+print(json.dumps( [1, 'simple', 'list']))
+print('can handle only lists and dictionaries, custom objects require more effort')
+
